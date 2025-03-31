@@ -5,4 +5,11 @@
 
 We will use application.properties to configure the main app enabled virtual thread or linite le number of thread within the Tomcat server (refer to line 4 and 7 ). You can comment or uncomment the config you want to test
 Use the end point _http://localhost:8080/block/3_ (where 3 is the number of second you want to block a request) of main app to run the test.
-You can use Apache Benmark to run many resquests in parall. For Windows user refer to this website [apachelounge](https://www.apachelounge.com/download/#google_vignette) to download a zip version for Windows.
+You can use Apache Benchmark to run many resquests in parall. For Windows user refer to this website [apachelounge](https://www.apachelounge.com/download/#google_vignette) to download a zip version for Windows.
+
+Example:
+_ab -k -c 20 -n 60 http://localhost:8080/block/3_
+_ab_ Apache benchmark command
+_-c_ concurrency : Number of multiple requests to make at a time
+_-n_ requests : Number of requests to perform
+_-k_ Use HTTP KeepAlive feature
